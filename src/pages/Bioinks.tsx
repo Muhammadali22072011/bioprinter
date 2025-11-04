@@ -26,12 +26,14 @@ export default function Bioinks() {
     return bioinks.materials.tools
   }
 
+  const steps = currentLang === 'ru' ? bioinks.howto.steps.ru : currentLang === 'uz' ? bioinks.howto.steps.uz : bioinks.howto.steps.en
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": currentLang === 'ru' ? "Приготовление биогеля" : currentLang === 'uz' ? "Biojel tayyorlash" : "Bioink Preparation",
     "description": currentLang === 'ru' ? "Пошаговая инструкция по приготовлению биогеля для учебного биопринтера" : currentLang === 'uz' ? "O'quv bioptinteri uchun biojel tayyorlash bo'yicha qadamma-qadam qo'llanma" : "Step-by-step guide for preparing bioink for educational bioprinter",
-    "step": bioinks.howto.steps.map((step, index) => ({
+    "step": steps.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
       "text": step
@@ -68,11 +70,19 @@ export default function Bioinks() {
               {currentLang === 'ru' ? 'Базовые рецепты' : currentLang === 'uz' ? 'Asosiy retseptlar' : 'Basic Recipes'}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {bioinks.recipes.map((recipe, index) => (
-                <ScrollReveal key={recipe.id} delay={index * 0.1}>
-                  <InkRecipe recipe={recipe} index={index} />
-                </ScrollReveal>
-              ))}
+              {bioinks.recipes.map((recipe, index) => {
+                const transformedRecipe = {
+                  id: recipe.id,
+                  title: currentLang === 'ru' ? recipe.title_ru : currentLang === 'uz' ? recipe.title_uz : recipe.title_en,
+                  composition: recipe.composition.map(item => item[currentLang]),
+                  hardener: currentLang === 'ru' ? recipe.hardener_ru : currentLang === 'uz' ? recipe.hardener_uz : recipe.hardener_en
+                }
+                return (
+                  <ScrollReveal key={recipe.id} delay={index * 0.1}>
+                    <InkRecipe recipe={transformedRecipe} index={index} />
+                  </ScrollReveal>
+                )
+              })}
             </div>
           </div>
 
@@ -85,7 +95,7 @@ export default function Bioinks() {
                   <h3 className="text-lg font-display font-bold mb-2">
                     {currentLang === 'ru' ? 'Мини-порция для пробы' : currentLang === 'uz' ? 'Sinov uchun mini porsiya' : 'Mini Batch for Testing'}
                   </h3>
-                  <p className="text-gray-700">{bioinks.miniBatch}</p>
+                  <p className="text-gray-700">{currentLang === 'ru' ? bioinks.miniBatch.ru : currentLang === 'uz' ? bioinks.miniBatch.uz : bioinks.miniBatch.en}</p>
                 </div>
               </div>
             </Card>
@@ -95,7 +105,7 @@ export default function Bioinks() {
           <div className="my-16">
             <ScrollReveal>
               <HowToSteps
-                steps={bioinks.howto.steps}
+                steps={steps}
                 title={currentLang === 'ru' ? 'Как приготовить биогель' : currentLang === 'uz' ? 'Biojelni qanday tayyorlash' : 'How to Prepare Bioink'}
               />
             </ScrollReveal>
@@ -109,7 +119,7 @@ export default function Bioinks() {
             <ScrollReveal>
               <Card>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {bioinks.printParams.map((param, index) => (
+                  {(bioinks.printParams[currentLang] || bioinks.printParams.ru).map((param, index) => (
                     <li key={index} className="flex items-center space-x-2 text-gray-700">
                       <span className="w-2 h-2 rounded-full bg-primary-500"></span>
                       <span>{param}</span>
@@ -173,8 +183,8 @@ export default function Bioinks() {
                 <div className="flex items-start space-x-4 mb-4">
                   <TestTube className="text-primary-500 flex-shrink-0" size={40} />
                   <div>
-                    <h2 className="text-2xl font-display font-bold mb-2">{bioinks.detailedRecipe.title}</h2>
-                    <p className="text-gray-700">{bioinks.detailedRecipe.description}</p>
+                    <h2 className="text-2xl font-display font-bold mb-2">{(bioinks.detailedRecipe[currentLang] || bioinks.detailedRecipe.ru).title}</h2>
+                    <p className="text-gray-700">{(bioinks.detailedRecipe[currentLang] || bioinks.detailedRecipe.ru).description}</p>
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 mb-4">
@@ -182,7 +192,7 @@ export default function Bioinks() {
                     {currentLang === 'ru' ? 'Состав:' : currentLang === 'uz' ? 'Tarkibi:' : 'Composition:'}
                   </h3>
                   <ul className="space-y-2">
-                    {bioinks.detailedRecipe.composition.map((item, index) => (
+                    {(bioinks.detailedRecipe[currentLang] || bioinks.detailedRecipe.ru).composition.map((item, index) => (
                       <li key={index} className="text-gray-700 flex items-start space-x-2">
                         <span className="text-primary-500 font-bold">•</span>
                         <span>{item}</span>
@@ -191,7 +201,7 @@ export default function Bioinks() {
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  {bioinks.detailedRecipe.steps.map((step, index) => (
+                  {(bioinks.detailedRecipe[currentLang] || bioinks.detailedRecipe.ru).steps.map((step, index) => (
                     <div key={index} className="flex items-start space-x-3 text-gray-700">
                       <Badge variant="primary" className="flex-shrink-0">{index + 1}</Badge>
                       <span className="text-sm">{step}</span>
@@ -205,13 +215,13 @@ export default function Bioinks() {
           {/* Hardening Solution */}
           <div className="my-16">
             <h2 className="text-2xl font-display font-bold mb-8 text-center">
-              {bioinks.hardeningSolution.title}
+              {(bioinks.hardeningSolution[currentLang] || bioinks.hardeningSolution.ru).title}
             </h2>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              {bioinks.hardeningSolution.description}
+              {(bioinks.hardeningSolution[currentLang] || bioinks.hardeningSolution.ru).description}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {bioinks.hardeningSolution.variants.map((variant, index) => (
+              {(bioinks.hardeningSolution[currentLang] || bioinks.hardeningSolution.ru).variants.map((variant, index) => (
                 <ScrollReveal key={index} delay={index * 0.1}>
                   <Card>
                     <h3 className="font-display font-bold text-lg mb-3">{variant.name}</h3>
@@ -229,7 +239,7 @@ export default function Bioinks() {
             </div>
             <ScrollReveal delay={0.2}>
               <Notice type="info" className="mt-6">
-                <strong>{currentLang === 'ru' ? 'Как использовать:' : currentLang === 'uz' ? 'Qanday ishlatiladi:' : 'How to use:'}</strong> {bioinks.hardeningSolution.usage}
+                <strong>{currentLang === 'ru' ? 'Как использовать:' : currentLang === 'uz' ? 'Qanday ishlatiladi:' : 'How to use:'}</strong> {(bioinks.hardeningSolution[currentLang] || bioinks.hardeningSolution.ru).usage}
               </Notice>
             </ScrollReveal>
           </div>
@@ -242,7 +252,7 @@ export default function Bioinks() {
             <ScrollReveal>
               <Card>
                 <ul className="space-y-3">
-                  {bioinks.printingGuide.map((step, index) => (
+                  {(bioinks.printingGuide[currentLang] || bioinks.printingGuide.ru).map((step, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <Badge variant="secondary">{index + 1}</Badge>
                       <span className="text-gray-700 flex-1">{step}</span>
@@ -262,7 +272,7 @@ export default function Bioinks() {
               {currentLang === 'ru' ? 'Очень важно для насоса' : currentLang === 'uz' ? 'Nasos uchun juda muhim' : 'Very important for the pump'}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {bioinks.viscosityTuning.map((item, index) => (
+              {(bioinks.viscosityTuning[currentLang] || bioinks.viscosityTuning.ru).map((item, index) => (
                 <ScrollReveal key={index} delay={index * 0.05}>
                   <Card>
                     <div className="flex items-start space-x-3">
@@ -288,9 +298,9 @@ export default function Bioinks() {
                     {currentLang === 'ru' ? 'Укреплённая версия (опционально)' : currentLang === 'uz' ? 'Mustahkamlangan versiya (ixtiyoriy)' : 'Reinforced Version (Optional)'}
                   </h2>
                 </div>
-                <h3 className="text-lg font-semibold mb-3">{bioinks.reinforcedVersion.title}</h3>
+                <h3 className="text-lg font-semibold mb-3">{bioinks.reinforcedVersion[currentLang]?.title || bioinks.reinforcedVersion.ru.title}</h3>
                 <ul className="space-y-2 mb-4">
-                  {bioinks.reinforcedVersion.composition.map((item, index) => (
+                  {bioinks.reinforcedVersion[currentLang]?.composition.map((item: string, index: number) => (
                     <li key={index} className="text-gray-700 flex items-start space-x-2">
                       <span className="text-green-500 font-bold">•</span>
                       <span>{item}</span>
@@ -298,7 +308,7 @@ export default function Bioinks() {
                   ))}
                 </ul>
                 <Notice type="success">
-                  {bioinks.reinforcedVersion.note}
+                  {bioinks.reinforcedVersion[currentLang]?.note || bioinks.reinforcedVersion.ru.note}
                 </Notice>
               </Card>
             </ScrollReveal>
@@ -312,7 +322,7 @@ export default function Bioinks() {
                   {currentLang === 'ru' ? 'Безопасность' : currentLang === 'uz' ? 'Xavfsizlik' : 'Safety'}
                 </h2>
                 <ul className="space-y-2">
-                  {bioinks.safetyReminder.map((item, index) => (
+                  {(bioinks.safetyReminder[currentLang] || bioinks.safetyReminder.ru).map((item, index) => (
                     <li key={index} className="flex items-start space-x-2 text-yellow-900">
                       <span className="text-yellow-600 font-bold">⚠</span>
                       <span>{item}</span>
@@ -331,7 +341,7 @@ export default function Bioinks() {
             <ScrollReveal>
               <Card className="bg-gradient-to-br from-primary-50 to-cyan-50">
                 <ul className="space-y-3">
-                  {bioinks.checklist.map((item, index) => (
+                  {(bioinks.checklist[currentLang] || bioinks.checklist.ru).map((item, index) => (
                     <li key={index} className="flex items-center space-x-3">
                       <div className="w-6 h-6 rounded-md border-2 border-primary-500 flex items-center justify-center flex-shrink-0">
                         <CheckSquare size={16} className="text-primary-500" />
@@ -350,7 +360,7 @@ export default function Bioinks() {
               {currentLang === 'ru' ? 'Решение проблем' : currentLang === 'uz' ? 'Muammolarni hal qilish' : 'Troubleshooting'}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {bioinks.troubleshooting.map((item, index) => (
+              {(bioinks.troubleshooting[currentLang] || bioinks.troubleshooting.ru).map((item, index) => (
                 <ScrollReveal key={index} delay={index * 0.1}>
                   <Card>
                     <div className="flex items-start space-x-3">
