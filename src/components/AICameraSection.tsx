@@ -428,7 +428,7 @@ export default function AICameraSection({ lang }: AICameraSectionProps) {
             <div className="absolute top-4 right-4">
               {mode === 'printer' ? (
                 <Badge variant="success" className="flex items-center space-x-2">
-                  <span>✓ Принтер</span>
+                  <span>✓ {t.printer}</span>
                 </Badge>
               ) : (
                 <Badge variant="primary" className="flex items-center space-x-2">
