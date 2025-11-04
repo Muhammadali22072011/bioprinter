@@ -12,6 +12,7 @@ import Labs from './pages/education/Labs'
 import OpenSource from './pages/OpenSource'
 import AiQa from './pages/AiQa'
 import AICamera from './pages/AICamera'
+import AIObserver from './pages/AIObserver'
 import ShopUz from './pages/ShopUz'
 import Faq from './pages/Faq'
 import Contact from './pages/Contact'
@@ -38,6 +39,9 @@ function App() {
     <Routes>
       {/* Редирект на русскую версию по умолчанию */}
       <Route path="/" element={<Navigate to="/ru" replace />} />
+      
+      {/* AI Observer - отдельный роут без Layout */}
+      <Route path="/ai-observer" element={<AIObserver />} />
       
       {/* Роуты с языком */}
       <Route path="/:lang" element={<Layout />}>

@@ -4,7 +4,7 @@ interface BioprinterHeroProps {
   lang: 'ru' | 'uz' | 'en'
 }
 
-export default function BioprinterHero({ lang }: BioprinterHeroProps) {
+export default function BioprinterHero({ lang: _lang }: BioprinterHeroProps) {
   return (
     <section className="w-full overflow-hidden">
       <motion.div

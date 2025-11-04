@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Mail, FileText, Shield } from 'lucide-react'
+import { Mail, Shield } from 'lucide-react'
 
 export default function Footer() {
   const { t } = useTranslation()

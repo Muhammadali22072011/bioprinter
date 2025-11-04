@@ -478,16 +478,6 @@ export const contacts = {
       roleEn: "Biologist / Scientific Advisor",
       phone: "+998 88 269 10 07",
       phoneDisplay: "+998 88 269-10-07"
-    },
-    {
-      name: "Шермуродова Асал",
-      nameUz: "Shermurodova Asal",
-      nameEn: "Shermurodova Asal",
-      role: "Член команды",
-      roleUz: "Jamoa a'zosi",
-      roleEn: "Team Member",
-      phone: "+998 88 053 87 37",
-      phoneDisplay: "+998 88 053-87-37"
     }
   ],
   email: "info@edubioprinter.uz",

@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom'
-import { Camera, Zap, Target, Eye } from 'lucide-react'
+import { useParams, Link } from 'react-router-dom'
+import { Camera, Zap, Target, Eye, ArrowRight, Play } from 'lucide-react'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import Badge from '../components/ui/Badge'
 import Card from '../components/ui/Card'
@@ -16,6 +16,16 @@ export default function AICamera() {
       subtitle: 'Интеллектуальное распознавание области печати биопринтера',
       description: 'Используйте искусственный интеллект для автоматического определения рабочей области биопринтера в режиме реального времени.',
       seoDescription: 'AI камера для распознавания области печати биопринтера. Автоматическое определение рабочей зоны с помощью компьютерного зрения.',
+      testTitle: '🚀 Попробовать AI Observer',
+      testSubtitle: 'Экспериментальная система мониторинга печати',
+      testDescription: 'Полнофункциональная система для анализа процесса печати в реальном времени с измерением высоты слоя, ширины дорожки и автоматическими рекомендациями.',
+      testButton: 'Перейти к тестированию',
+      testFeatures: [
+        '📹 Анализ видео в реальном времени',
+        '📏 Измерение h и w в миллиметрах',
+        '📊 Графики и статистика',
+        '💾 Автоматическое сохранение данных',
+      ],
       features: [
         {
           icon: Camera,
@@ -67,6 +77,16 @@ export default function AICamera() {
       subtitle: 'Bioprinterning bosib chiqarish maydonini intellektual aniqlash',
       description: 'Real vaqt rejimida bioprinterning ish maydonini avtomatik aniqlash uchun sun\'iy intellektdan foydalaning.',
       seoDescription: 'Bioprinterning bosib chiqarish maydonini aniqlash uchun AI kamera. Kompyuter ko\'rish yordamida ish zonasini avtomatik aniqlash.',
+      testTitle: '🚀 AI Observer sinovdan o\'tkazing',
+      testSubtitle: 'Eksperimental bosib chiqarish monitoring tizimi',
+      testDescription: 'Real vaqt rejimida bosib chiqarish jarayonini tahlil qilish, qatlam balandligi va izning kengligini o\'lchash uchun to\'liq funksional tizim.',
+      testButton: 'Sinovga o\'tish',
+      testFeatures: [
+        '📹 Real vaqtda video tahlili',
+        '📏 h va w ni millimetrlarda o\'lchash',
+        '📊 Grafiklar va statistika',
+        '💾 Avtomatik ma\'lumotlarni saqlash',
+      ],
       features: [
         {
           icon: Camera,
@@ -118,6 +138,16 @@ export default function AICamera() {
       subtitle: 'Intelligent bioprinter print area recognition',
       description: 'Use artificial intelligence to automatically detect the bioprinter working area in real-time.',
       seoDescription: 'AI camera for bioprinter print area recognition. Automatic work zone detection using computer vision.',
+      testTitle: '🚀 Try AI Observer',
+      testSubtitle: 'Experimental Print Monitoring System',
+      testDescription: 'Full-featured system for real-time print process analysis with layer height and track width measurements and automatic recommendations.',
+      testButton: 'Go to Testing',
+      testFeatures: [
+        '📹 Real-time video analysis',
+        '📏 Measure h and w in millimeters',
+        '📊 Charts and statistics',
+        '💾 Automatic data saving',
+      ],
       features: [
         {
           icon: Camera,
@@ -305,6 +335,58 @@ export default function AICamera() {
                         : 'Recognition algorithm'}
                     </p>
                   </div>
+                </div>
+              </div>
+            </Card>
+          </ScrollReveal>
+
+          {/* AI Observer CTA */}
+          <ScrollReveal delay={0.5}>
+            <Card className="mt-16 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600 text-white border-none shadow-2xl overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -mr-32 -mt-32"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-10 rounded-full -ml-24 -mb-24"></div>
+              
+              <div className="relative z-10 p-8 md:p-12">
+                <div className="flex items-center justify-center mb-6">
+                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+                    <Play size={16} className="inline mr-2" />
+                    {currentLang === 'ru' ? 'Экспериментальная версия' : currentLang === 'uz' ? 'Eksperimental versiya' : 'Experimental Version'}
+                  </Badge>
+                </div>
+
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-4">
+                  {t.testTitle}
+                </h2>
+                
+                <p className="text-xl text-center mb-3 text-white/90">
+                  {t.testSubtitle}
+                </p>
+                
+                <p className="text-center mb-8 text-white/80 max-w-3xl mx-auto">
+                  {t.testDescription}
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                  {t.testFeatures.map((feature, idx) => (
+                    <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex justify-center">
+                  <Link
+                    to="/ai-observer"
+                    className="group inline-flex items-center space-x-3 px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl"
+                  >
+                    <Play size={24} />
+                    <span>{t.testButton}</span>
+                    <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+
+                <div className="mt-6 text-center text-sm text-white/60">
+                  ⚠️ {currentLang === 'ru' ? 'Экспериментальный модуль, не медизделие' : currentLang === 'uz' ? 'Eksperimental modul, tibbiy asbob emas' : 'Experimental module, not a medical device'}
                 </div>
               </div>
             </Card>

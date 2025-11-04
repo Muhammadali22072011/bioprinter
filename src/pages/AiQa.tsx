@@ -3,7 +3,7 @@ import SectionHeader from '../components/ui/SectionHeader'
 import AIBlock from '../components/AIBlock'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import SEO from '../components/SEO'
-import { aiModule, disclaimers } from '../content/data'
+import { aiModule } from '../content/data'
 
 export default function AiQa() {
   const { lang } = useParams<{ lang: string }>()

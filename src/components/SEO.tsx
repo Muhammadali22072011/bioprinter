@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async'
-import { useTranslation } from 'react-i18next'
 import { useLocation, useParams } from 'react-router-dom'
 
 interface SEOProps {
@@ -11,7 +10,6 @@ interface SEOProps {
 }
 
 export default function SEO({ title, description, keywords, ogType = 'website', schemaData }: SEOProps) {
-  const { i18n } = useTranslation()
   const { lang } = useParams<{ lang: string }>()
   const currentLang = lang || 'ru'
   const location = useLocation()

@@ -20,7 +20,8 @@
     "lenis": "^1.0.42",
     "clsx": "^2.1.0",
     "lucide-react": "^0.344.0",
-    "react-helmet-async": "^2.0.4"
+    "react-helmet-async": "^2.0.4",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",

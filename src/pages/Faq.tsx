@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import SectionHeader from '../components/ui/SectionHeader'
 import Card from '../components/ui/Card'
 import SEO from '../components/SEO'
-import { faq, disclaimers } from '../content/data'
+import { faq } from '../content/data'
 
 export default function Faq() {
   const { lang } = useParams<{ lang: string }>()

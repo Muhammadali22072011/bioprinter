@@ -4,7 +4,7 @@ import SectionHeader from '../components/ui/SectionHeader'
 import Card from '../components/ui/Card'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import SEO from '../components/SEO'
-import { education, disclaimers } from '../content/data'
+import { education } from '../content/data'
 
 export default function OpenSource() {
   const { lang } = useParams<{ lang: string }>()
