@@ -40,15 +40,39 @@ export const home = {
 }
 
 export const product = {
-  name: "Учебный биопринтер (Anet A8 Plus, шприцевый экструдер)",
-  spec: [
-    { key: "Область печати", value: "≥220×220×240 мм (типично для A8 Plus)" },
-    { key: "Материал печати", value: "Гидрогели на водной основе (альгинат/желатин и др.), без клеток" },
-    { key: "Скорость", value: "5–30 мм/с (рекомендуемо 5–20 мм/с)" },
-    { key: "Высота слоя", value: "0,6–1,2 мм (сопла 18–21G; рекомендовано 18G)" },
-    { key: "Температура стола/сопла", value: "Не требуется (комнатная)" },
-    { key: "Питание", value: "~220–240 В, 50 Гц; ≤150 Вт" },
-  ],
+  ru: {
+    name: "Учебный биопринтер (Anet A8 Plus, шприцевый экструдер)",
+    spec: [
+      { key: "Область печати", value: "≥220×220×240 мм (типично для A8 Plus)" },
+      { key: "Материал печати", value: "Гидрогели на водной основе (альгинат/желатин и др.), без клеток" },
+      { key: "Скорость", value: "5–30 мм/с (рекомендуемо 5–20 мм/с)" },
+      { key: "Высота слоя", value: "0,6–1,2 мм (сопла 18–21G; рекомендовано 18G)" },
+      { key: "Температура стола/сопла", value: "Не требуется (комнатная)" },
+      { key: "Питание", value: "~220–240 В, 50 Гц; ≤150 Вт" },
+    ],
+  },
+  uz: {
+    name: "O'quv bioprinter (Anet A8 Plus, shprits ekstruderi)",
+    spec: [
+      { key: "Bosib chiqarish maydoni", value: "≥220×220×240 mm" },
+      { key: "Bosib chiqarish materiali", value: "Suv asosida gidrojellar (alginat/jelatina va boshqalar), hujayrasiz" },
+      { key: "Tezlik", value: "5–30 mm/s (tavsiya etiladi 5–20 mm/s)" },
+      { key: "Qat balandligi", value: "0.6–1.2 mm (nozullar 18–21G)" },
+      { key: "Stol/Nozul harorati", value: "Talab qilinmaydi (xona harorati)" },
+      { key: "Elektr ta'minoti", value: "~220–240 V, 50 Hz; ≤150 W" },
+    ],
+  },
+  en: {
+    name: "Educational Bioprinter (Anet A8 Plus, Syringe Extruder)",
+    spec: [
+      { key: "Print Area", value: "≥220×220×240 mm (typical for A8 Plus)" },
+      { key: "Print Material", value: "Water-based hydrogels (alginate/gelatin etc.), cell-free" },
+      { key: "Speed", value: "5–30 mm/s (recommended 5–20 mm/s)" },
+      { key: "Layer Height", value: "0.6–1.2 mm (nozzles 18–21G; recommended 18G)" },
+      { key: "Bed/Nozzle Temperature", value: "Not required (room temperature)" },
+      { key: "Power", value: "~220–240 V, 50 Hz; ≤150 W" },
+    ],
+  },
   safety: [
     "Только пищевые/бытовые реагенты; живых клеток и патогенов нет.",
     "СИЗ: перчатки, очки. Растворы CaCl₂ ≥2% — избегать контакта с глазами.",
