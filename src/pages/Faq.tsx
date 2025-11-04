@@ -13,10 +13,12 @@ export default function Faq() {
   const currentLang = (lang || 'ru') as 'ru' | 'uz' | 'en'
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
+  const faqItems = faq[currentLang] || faq.ru
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faq.map(item => ({
+    "mainEntity": faqItems.map(item => ({
       "@type": "Question",
       "name": item.q,
       "acceptedAnswer": {
@@ -42,7 +44,7 @@ export default function Faq() {
           />
 
           <div className="mt-12 space-y-4">
-            {faq.map((item, index) => (
+            {faqItems.map((item, index) => (
               <Card key={index} hover={false} className="overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}

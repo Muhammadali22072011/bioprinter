@@ -9,6 +9,8 @@ export default function AiQa() {
   const { lang } = useParams<{ lang: string }>()
   const currentLang = (lang || 'ru') as 'ru' | 'uz' | 'en'
 
+  const content = aiModule[currentLang]
+
   return (
     <>
       <SEO
@@ -26,7 +28,7 @@ export default function AiQa() {
 
           <ScrollReveal>
             <div className="my-12">
-              <AIBlock steps={aiModule.idea} notes={aiModule.notes} />
+              <AIBlock steps={content.idea} notes={content.notes} lang={currentLang} />
             </div>
           </ScrollReveal>
         </div>

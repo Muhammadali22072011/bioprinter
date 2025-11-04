@@ -53,7 +53,7 @@ export default function Passport() {
               <h3 className="text-xl font-display font-bold mb-4 text-center">
                 {currentLang === 'ru' ? 'Технические характеристики' : currentLang === 'uz' ? 'Texnik xususiyatlar' : 'Technical Specifications'}
               </h3>
-              <SpecTable specs={product.spec} />
+              <SpecTable specs={product[currentLang].spec} />
             </div>
           </ScrollReveal>
 

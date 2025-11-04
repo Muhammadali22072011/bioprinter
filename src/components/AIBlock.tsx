@@ -6,15 +6,22 @@ import Notice from './ui/Notice'
 interface AIBlockProps {
   steps: string[]
   notes: string[]
+  lang?: 'ru' | 'uz' | 'en'
 }
 
-export default function AIBlock({ steps, notes }: AIBlockProps) {
+export default function AIBlock({ steps, notes, lang = 'ru' }: AIBlockProps) {
   const icons = [
     <Camera key="camera" size={32} className="text-primary-500" />,
     <Cpu key="cpu" size={32} className="text-cyan-500" />,
     <GitCompare key="compare" size={32} className="text-green-500" />,
     <Bell key="bell" size={32} className="text-yellow-500" />,
   ]
+
+  const importantText = {
+    ru: 'Важно:',
+    uz: 'Muhim:',
+    en: 'Important:'
+  }
 
   return (
     <div className="space-y-6">
@@ -48,7 +55,7 @@ export default function AIBlock({ steps, notes }: AIBlockProps) {
 
       {notes.map((note, index) => (
         <Notice key={index} type="warning">
-          <strong>Важно:</strong> {note}
+          <strong>{importantText[lang]}</strong> {note}
         </Notice>
       ))}
     </div>

@@ -16,7 +16,7 @@ export default function Product() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": product.name,
+    "name": product[currentLang].name,
     "description": disclaimers[currentLang],
     "category": "Educational Equipment",
   }
@@ -40,7 +40,7 @@ export default function Product() {
                 {currentLang === 'ru' ? 'Оборудование' : currentLang === 'uz' ? 'Uskunа' : 'Equipment'}
               </Badge>
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-primary-600 to-cyan-500 bg-clip-text text-transparent">
-                {product.name}
+                {product[currentLang].name}
               </h1>
               <p className="text-lg text-gray-600">
                 {currentLang === 'ru'
@@ -68,7 +68,7 @@ export default function Product() {
               <h2 className="text-2xl font-display font-bold mb-6 text-center">
                 {currentLang === 'ru' ? 'Технические характеристики' : currentLang === 'uz' ? 'Texnik xususiyatlar' : 'Technical Specifications'}
               </h2>
-              <SpecTable specs={product.spec} />
+              <SpecTable specs={product[currentLang].spec} />
             </div>
           </ScrollReveal>
 

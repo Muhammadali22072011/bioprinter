@@ -34,6 +34,17 @@ export default function AICameraSection({ lang }: AICameraSectionProps) {
       showExamples: 'Показать примеры',
       teachableMachine: 'Обучить модель на Teachable Machine',
       teachableMachineDesc: 'Создайте свою модель распознавания с помощью Google Teachable Machine',
+      cameraError: 'Не удалось получить доступ к камере',
+      printerDetected: '✓ Принтер обнаружен',
+      area: 'Область',
+      confidence: 'Уверенность',
+      people: 'Людей',
+      mode: 'Режим',
+      peopleRecognition: 'Распознавание людей',
+      active: 'Активных',
+      person: 'человек',
+      example: 'Пример',
+      printer: 'Принтер',
     },
     uz: {
       title: 'AI Kamera - Bosib chiqarish maydonini aniqlash',
@@ -49,6 +60,17 @@ export default function AICameraSection({ lang }: AICameraSectionProps) {
       showExamples: 'Namunalarni ko\'rsatish',
       teachableMachine: 'Teachable Machine\'da model yaratish',
       teachableMachineDesc: 'Google Teachable Machine yordamida o\'z tanib olish modelingizni yarating',
+      cameraError: 'Kameraga kirish imkoni bo\'lmadi',
+      printerDetected: '✓ Printer aniqlandi',
+      area: 'Maydon',
+      confidence: 'Ishonch',
+      people: 'Odamlar',
+      mode: 'Rejim',
+      peopleRecognition: 'Odamlarni tanib olish',
+      active: 'Faol',
+      person: 'odam',
+      example: 'Namuna',
+      printer: 'Printer',
     },
     en: {
       title: 'AI Camera - Print Area Recognition',
@@ -64,6 +86,17 @@ export default function AICameraSection({ lang }: AICameraSectionProps) {
       showExamples: 'Show examples',
       teachableMachine: 'Train Model on Teachable Machine',
       teachableMachineDesc: 'Create your own recognition model using Google Teachable Machine',
+      cameraError: 'Failed to access camera',
+      printerDetected: '✓ Printer detected',
+      area: 'Area',
+      confidence: 'Confidence',
+      people: 'People',
+      mode: 'Mode',
+      peopleRecognition: 'People Recognition',
+      active: 'Active',
+      person: 'person',
+      example: 'Example',
+      printer: 'Printer',
     },
   }
 
@@ -164,7 +197,7 @@ export default function AICameraSection({ lang }: AICameraSectionProps) {
       }
     } catch (err: any) {
       console.error('Camera error:', err)
-      setError('Не удалось получить доступ к камере')
+      setError(t.cameraError)
     }
   }
 
@@ -239,11 +272,11 @@ export default function AICameraSection({ lang }: AICameraSectionProps) {
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
                       </div>
                       <div className="absolute top-4 right-4 bg-white rounded-lg px-3 py-2 shadow-lg">
-                        <Badge variant="success" className="text-sm font-bold">✓ Принтер обнаружен</Badge>
+                        <Badge variant="success" className="text-sm font-bold">{t.printerDetected}</Badge>
                       </div>
                       <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-3 py-2 rounded-lg text-xs">
-                        <div>Область: 60% × 60%</div>
-                        <div>Уверенность: 95%</div>
+                        <div>{t.area}: 60% × 60%</div>
+                        <div>{t.confidence}: 95%</div>
                       </div>
                     </>
                   )}
@@ -270,17 +303,17 @@ export default function AICameraSection({ lang }: AICameraSectionProps) {
                       <div className="absolute top-4 right-4 bg-white rounded-lg px-3 py-2 shadow-lg">
                         <Badge variant="primary" className="text-sm font-bold flex items-center space-x-2">
                           <Users size={16} />
-                          <span>Людей: {img.id - 4}</span>
+                          <span>{t.people}: {img.id - 4}</span>
                         </Badge>
                       </div>
                       <div className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-3 py-2 rounded-lg text-xs">
-                        <div>Режим: Распознавание людей</div>
-                        <div>Активных: {img.id - 4} человек</div>
+                        <div>{t.mode}: {t.peopleRecognition}</div>
+                        <div>{t.active}: {img.id - 4} {t.person}</div>
                       </div>
                     </>
                   )}
                   <div className="absolute top-2 left-2 bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold">
-                    Пример {img.id}
+                    {t.example} {img.id}
                   </div>
                 </div>
               ))}

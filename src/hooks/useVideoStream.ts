@@ -16,10 +16,29 @@ export function useVideoStream() {
   } = useSessionStore()
 
   // Получить список камер
-  const enumerateDevices = useCallback(async () => {
+  const enumerateDevices = useCallback(async (requestPermission = false) => {
     try {
+      // На HTTPS (production) сначала нужно получить разрешение
+      if (requestPermission) {
+        try {
+          const tempStream = await navigator.mediaDevices.getUserMedia({ video: true })
+          // Сразу останавливаем временный поток
+          tempStream.getTracks().forEach(track => track.stop())
+        } catch (permErr) {
+          console.warn('Permission denied for camera access')
+          setError('Разрешите доступ к камере для просмотра списка устройств')
+          return []
+        }
+      }
+
       const devices = await navigator.mediaDevices.enumerateDevices()
       const videoDevices = devices.filter(device => device.kind === 'videoinput')
+      
+      // Если нет меток (labels), значит нужно разрешение
+      if (videoDevices.length > 0 && !videoDevices[0].label && !requestPermission) {
+        return await enumerateDevices(true)
+      }
+      
       setCameras(videoDevices)
       return videoDevices
     } catch (err) {
@@ -54,11 +73,13 @@ export function useVideoStream() {
       }
 
       // После получения доступа обновляем список устройств
-      await enumerateDevices()
+      await enumerateDevices(false)
     } catch (err: any) {
       console.error('Camera error:', err)
       const message = err.name === 'NotAllowedError' 
-        ? 'Camera access denied' 
+        ? 'Camera access denied. Please allow camera access in browser settings.' 
+        : err.name === 'NotFoundError'
+        ? 'No camera found. Please connect a camera.'
         : 'Failed to start camera'
       setError(message)
       addLog('error', message)
@@ -88,10 +109,10 @@ export function useVideoStream() {
     }
   }, [isActive, stopCamera, startCamera])
 
-  // Cleanup
+  // Cleanup и инициализация
   useEffect(() => {
-    // Инициализация списка камер
-    enumerateDevices()
+    // Инициализация списка камер (автоматически запросит разрешение если нужно)
+    enumerateDevices(false)
 
     return () => {
       if (streamRef.current) {
