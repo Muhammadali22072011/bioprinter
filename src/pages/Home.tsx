@@ -8,10 +8,12 @@ import Card from '../components/ui/Card'
 import SectionHeader from '../components/ui/SectionHeader'
 import ScrollReveal from '../components/ui/ScrollReveal'
 import SEO from '../components/SEO'
+import VideoGallery from '../components/VideoGallery'
 import { home, disclaimers } from '../content/data'
+import BioprinterHero from '../components/BioprinterHero'
 
 export default function Home() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const { lang } = useParams<{ lang: string }>()
   const currentLang = (lang || 'ru') as 'ru' | 'uz' | 'en'
   const content = home[currentLang]
@@ -148,6 +150,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Bioprinter Hero Section */}
+      <BioprinterHero lang={currentLang} />
+
       {/* How It Works */}
       <section className="section">
         <div className="container">
@@ -177,6 +182,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Video Gallery */}
+      <VideoGallery lang={currentLang} />
 
       {/* CTA Section */}
       <section className="section bg-gradient-to-br from-primary-50 to-cyan-50">
