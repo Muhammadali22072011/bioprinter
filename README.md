@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BIOPRINTER — Учебный биопринтер
 
 > **Production-ready** сайт образовательного биопринтера на базе **Vite + React + TypeScript + Tailwind CSS + Framer Motion**
@@ -486,3 +487,6 @@ const languages = [
 
 **Создано с ❤️ для образования**
 
+=======
+# bioprinter
+>>>>>>> 6dcd65dcc54456e26a06ffd432b045e9ef00d717
