@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "product": "Printer",
+    "bioinks": "Biosiyohlar",
+    "education": "Ta'lim",
+    "openSource": "Open Source",
+    "aiQa": "AI-nazorat",
+    "aiCamera": "AI Kamera",
+    "shopUz": "Qayerdan sotib olish (UZ)",
+    "faq": "Savollar",
+    "contact": "Aloqa"
+  },
+  "footer": {
+    "description": "Tirik hujayralarsiz gidrojellar bilan xavfsiz bosib chiqarish uchun shpritsli ekstruderli o'quv bioprinter",
+    "quickLinks": "Tezkor havolalar",
+    "resources": "Resurslar",
+    "legal": "Huquqiy ma'lumot",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari",
+    "education": "Ta'lim uchun",
+    "allRightsReserved": "Barcha huquqlar himoyalangan"
+  },
+  "common": {
+    "learnMore": "Batafsil",
+    "download": "Yuklab olish",
+    "viewAll": "Hammasini ko'rish",
+    "back": "Orqaga",
+    "next": "Keyingi",
+    "previous": "Oldingi",
+    "close": "Yopish",
+    "search": "Qidirish",
+    "educationOnly": "Faqat ta'lim uchun",
+    "noLiveCells": "Tirik hujayralar yo'q",
+    "safeReagents": "Xavfsiz reagentlar"
+  },
+  "cta": {
+    "viewPrinter": "Printerni ko'rish",
+    "bioinkRecipes": "Biojel retseptlari",
+    "teacherGuide": "O'qituvchi uchun qo'llanma",
+    "downloadPDF": "PDF yuklab olish",
+    "shopNow": "Xarid qilish"
+  }
+}
+

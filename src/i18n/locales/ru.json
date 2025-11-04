@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Главная",
+    "product": "Принтер",
+    "bioinks": "Биочернила",
+    "education": "Образование",
+    "openSource": "Open Source",
+    "aiQa": "AI-контроль",
+    "aiCamera": "AI Камера",
+    "shopUz": "Где купить (UZ)",
+    "faq": "FAQ",
+    "contact": "Контакты"
+  },
+  "footer": {
+    "description": "Учебный биопринтер с шприцевым экструдером для безопасной печати гидрогелями без живых клеток",
+    "quickLinks": "Быстрые ссылки",
+    "resources": "Ресурсы",
+    "legal": "Правовая информация",
+    "privacy": "Политика конфиденциальности",
+    "terms": "Условия использования",
+    "education": "Для образования",
+    "allRightsReserved": "Все права защищены"
+  },
+  "common": {
+    "learnMore": "Подробнее",
+    "download": "Скачать",
+    "viewAll": "Смотреть все",
+    "back": "Назад",
+    "next": "Далее",
+    "previous": "Предыдущий",
+    "close": "Закрыть",
+    "search": "Поиск",
+    "educationOnly": "Только для образования",
+    "noLiveCells": "Без живых клеток",
+    "safeReagents": "Безопасные реагенты"
+  },
+  "cta": {
+    "viewPrinter": "Посмотреть принтер",
+    "bioinkRecipes": "Рецепты биогеля",
+    "teacherGuide": "Инструкция учителю",
+    "downloadPDF": "Скачать PDF",
+    "shopNow": "Перейти к покупке"
+  }
+}
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact BioPrint EDU — Пакеты и пилотный проект</title>
+    <meta name="description" content="Стоимость и условия покупки. Пакеты: Starter, Lab, Club. Рассрочка, аренда, спонсор 50/50 для школ Узбекистана.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="./index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="6" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 12L12 20M16 12L16 20M20 12L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                        <span class="logo-text">Compact BioPrint EDU</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="./index.html" class="nav-link">← Главная</a>
+                    <a href="./investors.html" class="nav-link" data-i18n="investors.label"></a>
+                    <a href="./docs.html" class="nav-link" data-i18n="docs.label"></a>
+                    <div class="nav-actions">
+                        <div class="lang-switcher">
+                            <button class="lang-btn active" data-lang="ru">RU</button>
+                            <button class="lang-btn" data-lang="uz">UZ</button>
+                            <button class="lang-btn" data-lang="en">EN</button>
+                        </div>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 2.5V4M10 16V17.5M4 10H2.5M17.5 10H16M15.5 15.5L14.5 14.5M15.5 4.5L14.5 5.5M4.5 15.5L5.5 14.5M4.5 4.5L5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M17.5 10.8C16.8 13.5 14.4 15.5 11.5 15.5C8 15.5 5 12.5 5 9C5 6.1 6.9 3.7 9.6 3C9.2 3.6 9 4.3 9 5C9 7.2 10.8 9 13 9C13.7 9 14.4 8.8 15 8.4C15.3 9.1 15.5 9.9 15.5 10.7L17.5 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 60px 0;">
+        <div class="hero-bg"><div class="hero-grid"></div></div>
+        <div class="container">
+            <h1 class="hero-title" data-i18n="pricing.pilot"></h1>
+            <p class="hero-subtitle">Выберите пакет, который подходит вашей школе</p>
+        </div>
+    </section>
+
+    <!-- Packages Grid -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto; margin-bottom: 50px;">
+                <h2 style="font-size: 2rem; margin-bottom: 15px; font-weight: 700;">Пакеты для любой школы</h2>
+                <p style="color: var(--color-text-muted); font-size: 1.125rem;">
+                    От демо-набора до полной лаборатории. Гибкие условия оплаты, поддержка и методика включены.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Starter -->
+                <div class="glass-card" style="padding: 30px; display: flex; flex-direction: column;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 10px; font-size: 1.5rem;" data-i18n="packages.starter"></h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;" data-i18n="packages.starterTitle"></p>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--color-primary); margin-bottom: 20px;">$1,500</div>
+                    <ul style="flex: 1; list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.starterFeature1"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.starterFeature2"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.starterFeature3"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.starterFeature4"></li>
+                        <li style="padding: 10px 0;" data-i18n="packages.starterFeature5"></li>
+                    </ul>
+                    <button style="width: 100%; background: var(--color-primary); color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                        Запросить КП
+                    </button>
+                </div>
+
+                <!-- Lab -->
+                <div class="glass-card" style="padding: 30px; display: flex; flex-direction: column; border: 2px solid var(--color-success);">
+                    <div style="display: inline-block; background: var(--color-success); color: white; padding: 5px 12px; border-radius: 20px; width: fit-content; font-size: 0.75rem; margin-bottom: 10px; font-weight: 600;">★ РЕКОМЕНДУЕМЫЙ</div>
+                    <h3 style="color: var(--color-success); margin-bottom: 10px; font-size: 1.5rem;" data-i18n="packages.lab"></h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;" data-i18n="packages.labTitle"></p>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--color-success); margin-bottom: 20px;">$2,500</div>
+                    <ul style="flex: 1; list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.labFeature1"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.labFeature2"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.labFeature3"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.labFeature4"></li>
+                        <li style="padding: 10px 0;" data-i18n="packages.labFeature5"></li>
+                    </ul>
+                    <button style="width: 100%; background: var(--color-success); color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                        Запросить КП
+                    </button>
+                </div>
+
+                <!-- Club -->
+                <div class="glass-card" style="padding: 30px; display: flex; flex-direction: column;">
+                    <h3 style="color: var(--color-info); margin-bottom: 10px; font-size: 1.5rem;" data-i18n="packages.club"></h3>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;" data-i18n="packages.clubTitle"></p>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--color-info); margin-bottom: 20px;">$1,200</div>
+                    <ul style="flex: 1; list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.clubFeature1"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.clubFeature2"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.clubFeature3"></li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);" data-i18n="packages.clubFeature4"></li>
+                        <li style="padding: 10px 0;" data-i18n="packages.clubFeature5"></li>
+                    </ul>
+                    <button style="width: 100%; background: var(--color-info); color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                        Запросить КП
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Timeline / Roadmap (Brinter style) -->
+    <section class="section" style="padding: 60px 0; background: linear-gradient(135deg, rgba(0, 211, 167, 0.05) 0%, rgba(76, 90, 255, 0.05) 100%);">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto; margin-bottom: 50px;">
+                <h2 style="font-size: 2rem; margin-bottom: 15px; font-weight: 700;">Пилотная программа</h2>
+                <p style="color: var(--color-text-muted); font-size: 1.125rem;">
+                    Присоединитесь к школам Узбекистана, которые уже печатают. Поэтапное развёртывание, поддержка на каждом шаге.
+                </p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="glass-card" style="padding: 30px; margin-bottom: 20px; border-left: 4px solid var(--color-primary);">
+                    <div style="display: flex; align-items: baseline; gap: 15px;">
+                        <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-primary);">📋</div>
+                        <div>
+                            <h4 style="color: var(--color-primary); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600;">Месяц 1: Поставка и инсталляция</h4>
+                            <p style="color: var(--color-text-muted); margin: 0;">Доставка комплекта, установка на месте, обучение учителей (8 часов), первые 5 уроков с методистом.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card" style="padding: 30px; margin-bottom: 20px; border-left: 4px solid var(--color-success);">
+                    <div style="display: flex; align-items: baseline; gap: 15px;">
+                        <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-success);">🚀</div>
+                        <div>
+                            <h4 style="color: var(--color-success); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600;">Месяцы 2–3: Интеграция в программу</h4>
+                            <p style="color: var(--color-text-muted); margin: 0;">Регулярные уроки, интеграция с текущей программой биологии, 24/7 техподдержка, еженедельный мониторинг.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card" style="padding: 30px; border-left: 4px solid var(--color-info);">
+                    <div style="display: flex; align-items: baseline; gap: 15px;">
+                        <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-info);">✨</div>
+                        <div>
+                            <h4 style="color: var(--color-info); margin-bottom: 8px; font-size: 1.1rem; font-weight: 600;">Месяцы 4+: Расширение и масштаб</h4>
+                            <p style="color: var(--color-text-muted); margin: 0;">Проведение демо для других школ, учебные кейсы, материалы для публикации, льготы на расширение оборудования.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Options -->
+    <section class="section" style="background: rgba(59, 130, 246, 0.05); padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 40px;">Варианты финансирования</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div class="glass-card" style="padding: 25px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 15px;">💳 Рассрочка</h3>
+                    <p data-i18n="uzbekistan.financing1Text"></p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <h3 style="color: var(--color-success); margin-bottom: 15px;">🔄 Аренда</h3>
+                    <p data-i18n="uzbekistan.financing2Text"></p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <h3 style="color: var(--color-warning); margin-bottom: 15px;">🤝 Спонсор 50/50</h3>
+                    <p data-i18n="uzbekistan.financing3Text"></p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <h3 style="color: var(--color-info); margin-bottom: 15px;">🎁 Гранты</h3>
+                    <p data-i18n="uzbekistan.financing4Text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilot Request Form -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 40px; text-align: center;" data-i18n="pricing.pilotRequest"></h2>
+            <form style="max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--color-text-muted); font-size: 0.875rem;" data-i18n="contact.school"></label>
+                    <input type="text" placeholder="Название школы" style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: white; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--color-text-muted); font-size: 0.875rem;" data-i18n="contact.city"></label>
+                    <input type="text" placeholder="Город" style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: white; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--color-text-muted); font-size: 0.875rem;" data-i18n="pricing.quantity"></label>
+                    <input type="number" placeholder="1" min="1" style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: white; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--color-text-muted); font-size: 0.875rem;" data-i18n="contact.package"></label>
+                    <select style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: white; font-family: inherit;">
+                        <option>Starter</option>
+                        <option>Lab</option>
+                        <option>Club</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--color-text-muted); font-size: 0.875rem;" data-i18n="contact.email"></label>
+                    <input type="email" placeholder="email@school.uz" style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: white; font-family: inherit;">
+                </div>
+                <button type="submit" style="width: 100%; background: linear-gradient(135deg, var(--color-primary), var(--color-info)); color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 1rem;">
+                    Отправить заявку
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="6" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 12L12 20M16 12L16 20M20 12L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                        <span class="logo-text">Compact BioPrint EDU</span>
+                    </div>
+                    <p class="footer-tagline" data-i18n="footer.tagline"></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-legal" data-i18n="footer.legal"></p>
+                <p class="footer-disclaimer" data-i18n="footer.disclaimer"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

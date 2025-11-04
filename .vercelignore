@@ -1,0 +1,12 @@
+node_modules
+.git
+.vscode
+*.log
+.DS_Store
+фото
+docs
+*.md
+!README.md
+test-upload.html
+
+

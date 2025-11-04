@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact BioPrint EDU — Блог и новости</title>
+    <meta name="description" content="Новости и статьи о биопечати, STEM-образовании и внедрении технологии в школах Узбекистана.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="./index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="6" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 12L12 20M16 12L16 20M20 12L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                        <span class="logo-text">Compact BioPrint EDU</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="./index.html" class="nav-link">← Главная</a>
+                    <a href="./team.html" class="nav-link" data-i18n="team.label"></a>
+                    <a href="./docs.html" class="nav-link" data-i18n="docs.label"></a>
+                    <div class="nav-actions">
+                        <div class="lang-switcher">
+                            <button class="lang-btn active" data-lang="ru">RU</button>
+                            <button class="lang-btn" data-lang="uz">UZ</button>
+                            <button class="lang-btn" data-lang="en">EN</button>
+                        </div>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 2.5V4M10 16V17.5M4 10H2.5M17.5 10H16M15.5 15.5L14.5 14.5M15.5 4.5L14.5 5.5M4.5 15.5L5.5 14.5M4.5 4.5L5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M17.5 10.8C16.8 13.5 14.4 15.5 11.5 15.5C8 15.5 5 12.5 5 9C5 6.1 6.9 3.7 9.6 3C9.2 3.6 9 4.3 9 5C9 7.2 10.8 9 13 9C13.7 9 14.4 8.8 15 8.4C15.3 9.1 15.5 9.9 15.5 10.7L17.5 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 60px 0;">
+        <div class="hero-bg"><div class="hero-grid"></div></div>
+        <div class="container">
+            <h1 class="hero-title" data-i18n="blog.title"></h1>
+            <p class="hero-subtitle">Новости проекта, методические материалы и обновления ПО</p>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="glass-card" style="padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+                <div>
+                    <div style="display: inline-block; background: var(--color-primary); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; margin-bottom: 15px; font-weight: 600;">🔥 ГЛАВНОЕ</div>
+                    <h2 style="font-size: 1.75rem; margin-bottom: 15px; line-height: 1.3;">Школа №45 Ташкента прошла первый урок с Compact BioPrint EDU</h2>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;">60 учеников, 2 часа, 100% успех. Печать многослойных структур, контроль качества с ИИ, дети в восторге.</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem;">📅 30 октября 2025 • Автор: Юрий Владимирович</p>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(34, 197, 94, 0.2)); height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 5rem;">📚</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Articles Grid (ChatGPT style) -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 40px; font-weight: 700;">Все статьи</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+                <article style="padding: 24px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid var(--color-border); display: flex; flex-direction: column; transition: all 0.3s ease; cursor: pointer;">
+                    <div style="margin-bottom: 12px;"><span style="font-size: 0.75rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase;">Образование</span></div>
+                    <h3 style="font-size: 1.125rem; margin-bottom: 12px; line-height: 1.4; font-weight: 600;">Методика преподавания слой-за-слоем печати</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; flex: 1; margin-bottom: 12px;">Как объяснить ученикам концепцию 3D-биопечати за 30 минут. Практические советы учителей.</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.75rem;">28 октября • 5 мин чтения</p>
+                </article>
+                
+                <article style="padding: 24px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid var(--color-border); display: flex; flex-direction: column; transition: all 0.3s ease; cursor: pointer;">
+                    <div style="margin-bottom: 12px;"><span style="font-size: 0.75rem; color: var(--color-success); font-weight: 600; text-transform: uppercase;">Технология</span></div>
+                    <h3 style="font-size: 1.125rem; margin-bottom: 12px; line-height: 1.4; font-weight: 600;">ПО ИИ-модуля обновлено до v2.1</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; flex: 1; margin-bottom: 12px;">Улучшена точность детектирования дефектов на 23%. Скачайте обновление в разделе Docs.</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.75rem;">25 октября • 3 мин чтения</p>
+                </article>
+                
+                <article style="padding: 24px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid var(--color-border); display: flex; flex-direction: column; transition: all 0.3s ease; cursor: pointer;">
+                    <div style="margin-bottom: 12px;"><span style="font-size: 0.75rem; color: var(--color-warning); font-weight: 600; text-transform: uppercase;">События</span></div>
+                    <h3 style="font-size: 1.125rem; margin-bottom: 12px; line-height: 1.4; font-weight: 600;">Запуск пилотной программы в 10 школах</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; flex: 1; margin-bottom: 12px;">Присоединяйтесь! Школы получат комплект с 40% скидкой плюс полная методическая поддержка.</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.75rem;">22 октября • 4 мин чтения</p>
+                </article>
+                
+                <article style="padding: 24px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid var(--color-border); display: flex; flex-direction: column; transition: all 0.3s ease; cursor: pointer;">
+                    <div style="margin-bottom: 12px;"><span style="font-size: 0.75rem; color: var(--color-info); font-weight: 600; text-transform: uppercase;">Образование</span></div>
+                    <h3 style="font-size: 1.125rem; margin-bottom: 12px; line-height: 1.4; font-weight: 600;">Безопасность в кабинете биопечати</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; flex: 1; margin-bottom: 12px;">Гайд по организации безопасного рабочего пространства и требования к хранению реагентов.</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.75rem;">20 октября • 6 мин чтения</p>
+                </article>
+                
+                <article style="padding: 24px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid var(--color-border); display: flex; flex-direction: column; transition: all 0.3s ease; cursor: pointer;">
+                    <div style="margin-bottom: 12px;"><span style="font-size: 0.75rem; color: var(--color-success); font-weight: 600; text-transform: uppercase;">Технология</span></div>
+                    <h3 style="font-size: 1.125rem; margin-bottom: 12px; line-height: 1.4; font-weight: 600;">Интеграция с Google Classroom</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; flex: 1; margin-bottom: 12px;">Результаты ИИ-анализа теперь автоматически отправляются в LMS вашей школы.</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.75rem;">18 октября • 4 мин чтения</p>
+                </article>
+                
+                <article style="padding: 24px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid var(--color-border); display: flex; flex-direction: column; transition: all 0.3s ease; cursor: pointer;">
+                    <div style="margin-bottom: 12px;"><span style="font-size: 0.75rem; color: var(--color-warning); font-weight: 600; text-transform: uppercase;">События</span></div>
+                    <h3 style="font-size: 1.125rem; margin-bottom: 12px; line-height: 1.4; font-weight: 600;">Победа в EdTech Innovations 2025</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; flex: 1; margin-bottom: 12px;">Премия за инновацию в STEM-образовании. Спасибо жюри, школам и партнёрам!</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.75rem;">15 октября • 3 мин чтения</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section" style="background: rgba(59, 130, 246, 0.05); padding: 60px 0;">
+        <div class="container">
+            <div class="glass-card" style="padding: 50px; text-align: center;">
+                <h2 style="margin-bottom: 15px;">📧 Подпишитесь на новости</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 25px;">Получайте методички, обновления ПО и кейсы школ прямо в ваш email</p>
+                <div style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto;">
+                    <input type="email" placeholder="your@school.uz" style="flex: 1; padding: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: white; font-family: inherit;">
+                    <button style="background: var(--color-primary); color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-weight: 600;">Подписаться</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="footer-legal" data-i18n="footer.legal"></p>
+                <p class="footer-disclaimer" data-i18n="footer.disclaimer"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

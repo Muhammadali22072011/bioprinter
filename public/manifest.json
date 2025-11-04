@@ -1,0 +1,22 @@
+{
+  "name": "EDU BIOPRINTER — Учебный биопринтер",
+  "short_name": "EDU BIOPRINTER",
+  "description": "edubioprinter.uz — Учебный биопринтер с шприцевым экструдером для безопасной печати гидрогелями",
+  "start_url": "/ru",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "science"],
+  "lang": "ru",
+  "dir": "ltr"
+}
+

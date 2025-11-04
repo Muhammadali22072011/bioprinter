@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact BioPrint EDU — Команда</title>
+    <meta name="description" content="Встречайте команду EduBioPrint Uzbekistan. Основатели, эксперты, советники с опытом в biotechnology, education и business.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="./index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="6" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 12L12 20M16 12L16 20M20 12L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                        <span class="logo-text">Compact BioPrint EDU</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="./index.html" class="nav-link">← Главная</a>
+                    <a href="./docs.html" class="nav-link" data-i18n="docs.label"></a>
+                    <div class="nav-actions">
+                        <div class="lang-switcher">
+                            <button class="lang-btn active" data-lang="ru">RU</button>
+                            <button class="lang-btn" data-lang="uz">UZ</button>
+                            <button class="lang-btn" data-lang="en">EN</button>
+                        </div>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 2.5V4M10 16V17.5M4 10H2.5M17.5 10H16M15.5 15.5L14.5 14.5M15.5 4.5L14.5 5.5M4.5 15.5L5.5 14.5M4.5 4.5L5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M17.5 10.8C16.8 13.5 14.4 15.5 11.5 15.5C8 15.5 5 12.5 5 9C5 6.1 6.9 3.7 9.6 3C9.2 3.6 9 4.3 9 5C9 7.2 10.8 9 13 9C13.7 9 14.4 8.8 15 8.4C15.3 9.1 15.5 9.9 15.5 10.7L17.5 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 60px 0;">
+        <div class="hero-bg"><div class="hero-grid"></div></div>
+        <div class="container">
+            <h1 class="hero-title" data-i18n="team.title"></h1>
+            <p class="hero-subtitle">Опытная команда, объединённая видением массового STEM-образования в Узбекистане</p>
+        </div>
+    </section>
+
+    <!-- Founders -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 40px;" data-i18n="team.founders"></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div class="glass-card" style="padding: 30px; text-align: center;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--color-primary), var(--color-info)); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">👨‍🔬</div>
+                    <h3 style="margin-bottom: 5px; font-size: 1.25rem;">Юрий Владимирович</h3>
+                    <p style="color: var(--color-primary); margin-bottom: 15px; font-weight: 600;">Основатель & CEO</p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;">15+ лет в биотехнологиях и EdTech. Развивал проекты STEM в Узбекистане и странах ЦА.</p>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="#" style="color: var(--color-primary);">LinkedIn</a>
+                        <a href="#" style="color: var(--color-primary);">Email</a>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 30px; text-align: center;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--color-success), var(--color-info)); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">👩‍💼</div>
+                    <h3 style="margin-bottom: 5px; font-size: 1.25rem;">Назрин Юсупова</h3>
+                    <p style="color: var(--color-success); margin-bottom: 15px; font-weight: 600;">Co-founder & Business Lead</p>
+                    <p style="color: var(--color-text-muted); margin-bottom: 20px;">Эксперт по партнёрствам со школами. Налаживает отношения с директорами и министерствами.</p>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="#" style="color: var(--color-success);">LinkedIn</a>
+                        <a href="#" style="color: var(--color-success);">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisors -->
+    <section class="section" style="background: rgba(59, 130, 246, 0.05); padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 40px;" data-i18n="team.advisors"></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div class="glass-card" style="padding: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🎓</div>
+                    <h4 style="margin-bottom: 5px;">Проф. Фарход Холиев</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 10px;">STEM-эксперт, Ташкентский технический университет</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem;">Консультирует по учебным программам и стандартам</p>
+                </div>
+
+                <div class="glass-card" style="padding: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🏥</div>
+                    <h4 style="margin-bottom: 5px;">Д-р Мехрибан Сойунова</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 10px;">Кандидат биологических наук</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem;">Валидирует методики и безопасность</p>
+                </div>
+
+                <div class="glass-card" style="padding: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">💼</div>
+                    <h4 style="margin-bottom: 5px;">Давид Орлов</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 10px;">CEO EdTech Fund Asia</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem;">Привлечение инвестиций и масштабирование</p>
+                </div>
+
+                <div class="glass-card" style="padding: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🚀</div>
+                    <h4 style="margin-bottom: 5px;">Мария Ковалёва</h4>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 10px;">Директор IT Park Uzbekistan</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.875rem;">Связь с инвесторами и экосистемой</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="glass-card" style="padding: 50px; text-align: center;">
+                <h2 style="margin-bottom: 20px; font-size: 2rem;">Наши ценности</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 40px; font-size: 1.125rem;">Мы верим в доступное, качественное STEM-образование для каждого ребёнка</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🎯</div>
+                        <h4 style="margin-bottom: 8px;">Качество</h4>
+                        <p style="color: var(--color-text-muted); font-size: 0.875rem;">Только лучшие методики и материалы</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🌍</div>
+                        <h4 style="margin-bottom: 8px;">Доступность</h4>
+                        <p style="color: var(--color-text-muted); font-size: 0.875rem;">Технология для всех школ Узбекистана</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🤝</div>
+                        <h4 style="margin-bottom: 8px;">Поддержка</h4>
+                        <p style="color: var(--color-text-muted); font-size: 0.875rem;">24/7 помощь учителям и школам</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 10px;">📈</div>
+                        <h4 style="margin-bottom: 8px;">Масштаб</h4>
+                        <p style="color: var(--color-text-muted); font-size: 0.875rem;">Растём, чтобы охватить все регионы</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="footer-legal" data-i18n="footer.legal"></p>
+                <p class="footer-disclaimer" data-i18n="footer.disclaimer"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "product": "Printer",
+    "bioinks": "Bioinks",
+    "education": "Education",
+    "openSource": "Open Source",
+    "aiQa": "AI Control",
+    "aiCamera": "AI Camera",
+    "shopUz": "Shop (UZ)",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "footer": {
+    "description": "Educational bioprinter with syringe extruder for safe hydrogel printing without live cells",
+    "quickLinks": "Quick Links",
+    "resources": "Resources",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "education": "For Education",
+    "allRightsReserved": "All rights reserved"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "download": "Download",
+    "viewAll": "View All",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "search": "Search",
+    "educationOnly": "Educational Use Only",
+    "noLiveCells": "No Live Cells",
+    "safeReagents": "Safe Reagents"
+  },
+  "cta": {
+    "viewPrinter": "View Printer",
+    "bioinkRecipes": "Bioink Recipes",
+    "teacherGuide": "Teacher's Guide",
+    "downloadPDF": "Download PDF",
+    "shopNow": "Shop Now"
+  }
+}
+

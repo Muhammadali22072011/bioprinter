@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://edubioprinter.uz/sitemap.xml
+
+User-agent: *
+Allow: /
+
+Sitemap: https://bioprinter.site/sitemap.xml
+
